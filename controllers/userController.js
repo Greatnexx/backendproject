@@ -23,7 +23,6 @@ const register = async (req, res) => {
         const savedUser = await newUser.save();
 
         if (savedUser) {
-            // Send a welcome email after successful registration
             await sendWelcomeEmail(savedUser);
 
             const token = generateToken(savedUser._id);
