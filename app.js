@@ -11,6 +11,10 @@ app.use(express.json());
 app.use(logger)
 
 app.use(express.urlencoded({ extended: true }));
+
+app.use("/test", async(req, res) => {
+    res.send("Hello from server")
+})
 app.use('/api/users',userRoutes)
 app.use('/api/profile', profileRoute)
 app.use('/api/books',bookRoutes)
